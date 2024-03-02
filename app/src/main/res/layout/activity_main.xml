@@ -10,6 +10,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- simple text view -->
     <TextView
         android:id="@+id/text_utsa"
         android:layout_width="wrap_content"
@@ -19,9 +20,9 @@
         android:textStyle="bold|italic"
         android:textSize="28sp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- simple text view -->
     <TextView
         android:id="@+id/text_profile_editor"
         android:layout_width="wrap_content"
@@ -34,6 +35,7 @@
         app:layout_constraintTop_toBottomOf="@id/text_utsa"
         app:layout_constraintStart_toStartOf="@id/text_utsa"/>
 
+    <!-- utsa mascot head image-->
     <ImageView
         android:id="@+id/utsa_logo"
         android:layout_width="0dp"
@@ -44,6 +46,7 @@
         app:layout_constraintStart_toEndOf="@id/text_profile_editor"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- card view from Material Design used as a surface container-->
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -56,6 +59,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- another constraint layout to constrain all views inside Card View to one another-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -64,6 +68,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp" >
 
+            <!-- profile icon image -->
             <ImageView
                 android:id="@+id/profile_icon"
                 android:layout_width="100dp"
@@ -74,6 +79,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- fab implemented from Material Design to display profile icon is editable-->
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,12 +88,12 @@
                 app:layout_constraintTop_toTopOf="@id/profile_icon"
                 app:layout_constraintEnd_toEndOf="@id/profile_icon"/>
 
+            <!-- text field copied from Material Design to input name -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/name_text_field"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-
                 android:hint="Name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintTop_toBottomOf="@id/profile_icon"
@@ -103,6 +109,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- simple text view -->
             <TextView
                 android:id="@+id/hobbies_text"
                 android:layout_width="wrap_content"
@@ -116,6 +123,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/name_text_field"/>
 
+            <!-- chip group holding list of choices (implemented from Material Design) -->
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chip_group"
                 android:layout_width="match_parent"
@@ -125,45 +133,48 @@
                 app:layout_constraintTop_toBottomOf="@id/hobbies_text"
                 app:layout_constraintStart_toStartOf="@id/hobbies_text" >
 
+                <!-- eating choice chip -->
                 <com.google.android.material.chip.Chip
                     android:id="@+id/eating_chip"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
                     android:text="Eating"/>
 
+                <!-- sleeping choice chip -->
                 <com.google.android.material.chip.Chip
                     android:id="@+id/sleeping_chip"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
                     android:text="Sleeping"/>
 
+                <!-- napping choice chip (tools attribute used to change display in layout editor) -->
                 <com.google.android.material.chip.Chip
                     android:id="@+id/napping_chip"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
+                    tools:checked="true"
                     android:text="Napping"/>
 
+                <!--nothing choice chip -->
                 <com.google.android.material.chip.Chip
                     android:id="@+id/nothing_chip"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
                     android:text="Nothing"/>
 
             </com.google.android.material.chip.ChipGroup>
 
+            <!-- done button -->
             <Button
                 android:id="@+id/done_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Done"
+                android:enabled="false"
                 app:cornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />

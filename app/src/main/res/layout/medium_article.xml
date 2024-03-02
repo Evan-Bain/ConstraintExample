@@ -5,22 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <TextView
+        android:id="@+id/text_utsa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UTSA"
+        android:textStyle="bold"
+        android:textSize="24sp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/text_profile_editor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_profile_editor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile Editor"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/text_utsa"
+        app:layout_constraintBottom_toTopOf="@id/android_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ImageView
-        android:id="@+id/utsa_logo"
+        android:id="@+id/android_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_android"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_profile_editor"
+        app:layout_constraintBottom_toTopOf="@id/click_here_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
+        android:id="@+id/click_here_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Click Here"
         app:cornerRadius="16dp"
-        app:layout_constraintTop_toBottomOf="@id/utsa_logo"
-        app:layout_constraintStart_toStartOf="@id/utsa_logo"
-        app:layout_constraintEnd_toEndOf="@id/utsa_logo"/>
+        app:layout_constraintTop_toBottomOf="@id/android_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/android_image"
+        app:layout_constraintEnd_toEndOf="@id/android_image"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
